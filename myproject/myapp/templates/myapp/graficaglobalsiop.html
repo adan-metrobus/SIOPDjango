@@ -1,0 +1,91 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Calificaciones Globales SIOP{% endblock %}
+
+{% block content %}
+    <h3 class="mt-4">Calificaciones Globales (SIOP)</h3>
+
+    <!-- Filtros de Fecha -->
+    <form method="get" class="form-row align-items-end mb-4">
+        <div class="form-group col-md-2">
+            <label for="start_date">Fecha de Inicio</label>
+            <input type="date" id="start_date" name="start_date" value="{{ start_date }}" class="form-control">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="end_date">Fecha de Fin</label>
+            <input type="date" id="end_date" name="end_date" value="{{ end_date }}" class="form-control">
+        </div>
+        <div class="form-group col-md-1">
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </div>
+    </form>
+
+    <!-- Gráficas Principales -->
+    <div class="row">
+        <div class="col-md-6">
+            <div id="grafica-barras"></div>
+        </div>
+        <div class="col-md-6">
+            <div id="grafica-lineas"></div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Tabla de Supervisores -->
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h4>Promedio por Supervisor</h4>
+            <p class="text-muted">Haz clic en un Indicativo para ver el detalle de sus incidencias.</p>
+            <div class="table-responsive">
+                <table class="table table-striped table-hover table-sm">
+                    <thead class="thead-light">
+                        <tr>
+                            <th>Indicativo</th>
+                            <th>Nombre Del Supervisor</th>
+                            <th>Promedio Calificación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for supervisor in supervisores_data %}
+                            <tr>
+                                <td><a href="?start_date={{ start_date }}&end_date={{ end_date }}&indicativo={{ supervisor.Indicativo }}">{{ supervisor.Indicativo }}</a></td>
+                                <td>{{ supervisor.Nombre_Del_Supervisor }}</td>
+                                <td>{{ supervisor.Promedio_Calificación }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tabla de Detalle -->
+    {% if tabla_detalle_html %}
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h4>{{ titulo_detalle }}</h4>
+            <div class="table-responsive">
+                {{ tabla_detalle_html|safe }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <script>
+        // Renderizar gráficas
+        var figBarras = {{ fig_barras_json|safe }};
+        Plotly.newPlot('grafica-barras', figBarras.data, figBarras.layout);
+
+        var figLineas = {{ fig_lineas_json|safe }};
+        Plotly.newPlot('grafica-lineas', figLineas.data, figLineas.layout);
+        
+        // Configurar el rango de fechas permitido en los date pickers
+        document.addEventListener('DOMContentLoaded', function() {
+            document.getElementById('start_date').min = "{{ min_date }}";
+            document.getElementById('start_date').max = "{{ max_date }}";
+            document.getElementById('end_date').min = "{{ min_date }}";
+            document.getElementById('end_date').max = "{{ max_date }}";
+        });
+    </script>
+{% endblock %}

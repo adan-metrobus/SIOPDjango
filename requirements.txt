@@ -1,6 +1,9 @@
-# Dev environment
-pip
-autopep8
-
-# App
-flask
+Django==4.1.7
+pandas==1.5.3
+numpy==1.24.4
+django-plotly-dash==2.2.2
+channels==4.0.0
+dash==2.9.3
+plotly==5.15.0
+dash-bootstrap-components==1.4.1
+whitenoise==6.6.0

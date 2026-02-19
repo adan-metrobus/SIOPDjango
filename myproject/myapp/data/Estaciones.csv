@@ -1,0 +1,291 @@
+idestacion,lineaestacion,nombreestacion,NomLinea,linea_id,TipoAsistenciaPA,Elevadores,Escal_Electricas
+1,linea 1indios verdes,Indios Verdes,Linea 1,1,PuntoFatiga,0,0
+2,linea 1deportivo 18 de marzo,Deportivo 18 de Marzo,Linea 1,1,normal,0,0
+3,linea 1euzkaro,Euzkaro,Linea 1,1,normal,0,0
+4,linea 1potrero,Potrero,Linea 1,1,normal,0,0
+5,linea 1la raza,La Raza,Linea 1,1,normal,1,0
+6,linea 1circuito,Circuito,Linea 1,1,normal,0,0
+7,linea 1san simón,San Simón,Linea 1,1,normal,0,0
+8,linea 1manuel gonzález,Manuel González,Linea 1,1,normal,0,0
+9,linea 1buenavista,Buenavista,Linea 1,1,normal,0,0
+10,linea 1buenavista ii,Buenavista II,Linea 1,1,PuntoFatiga,0,0
+11,linea 1el chopo,El Chopo,Linea 1,1,normal,0,0
+12,linea 1revolución,Revolución,Linea 1,1,normal,0,0
+13,linea 1plaza de la república,Plaza de la República,Linea 1,1,normal,0,0
+14,linea 1reforma,Reforma,Linea 1,1,normal,0,0
+15,linea 1hamburgo,Hamburgo,Linea 1,1,normal,0,0
+16,linea 1insurgentes,Insurgentes,Linea 1,1,PuntoFatiga,2,4
+17,linea 1durango,Durango,Linea 1,1,normal,0,0
+18,linea 1álvaro obregón,Álvaro Obregón,Linea 1,1,normal,0,0
+19,linea 1sonora,Sonora,Linea 1,1,normal,0,0
+20,linea 1campeche,Campeche,Linea 1,1,normal,0,0
+21,linea 1chilpancingo,Chilpancingo,Linea 1,1,normal,0,0
+22,linea 1nuevo león,Nuevo León,Linea 1,1,normal,0,0
+23,linea 1la piedad,La Piedad,Linea 1,1,normal,0,0
+24,linea 1polifórum,Polifórum,Linea 1,1,normal,0,0
+25,linea 1nápoles,Nápoles,Linea 1,1,normal,0,0
+26,linea 1colonia del valle,Colonia del Valle,Linea 1,1,normal,0,0
+27,linea 1ciudad de los deportes,Ciudad de los Deportes,Linea 1,1,PuntoFatiga,0,0
+28,linea 1parque hundido,Parque Hundido,Linea 1,1,normal,0,0
+29,linea 1félix cuevas,Félix Cuevas,Linea 1,1,normal,0,0
+30,linea 1río churubusco,Río Churubusco,Linea 1,1,normal,0,0
+31,linea 1teatro de los insurgentes,Teatro de los Insurgentes,Linea 1,1,normal,0,0
+32,linea 1josé maría velasco,José María Velasco,Linea 1,1,PuntoFatiga,0,0
+33,linea 1francia,Francia,Linea 1,1,normal,0,0
+34,linea 1olivo,Olivo,Linea 1,1,normal,0,0
+35,linea 1altavista,Altavista,Linea 1,1,normal,0,0
+36,linea 1la bombilla,La Bombilla,Linea 1,1,normal,0,0
+37,linea 1doctor gálvez,Doctor Gálvez,Linea 1,1,normal,0,0
+38,linea 1c.u.,C.U.,Linea 1,1,normal,0,0
+39,linea 1c.c.u.,C.C.U.,Linea 1,1,normal,0,0
+40,linea 1perisur,Perisur,Linea 1,1,normal,2,0
+41,linea 1villa olímpica,Villa Olímpica,Linea 1,1,PuntoFatiga,2,0
+42,linea 1corregidora,Corregidora,Linea 1,1,normal,2,0
+43,linea 1ayuntamiento,Ayuntamiento,Linea 1,1,normal,0,0
+44,linea 1fuentes brotantes,Fuentes Brotantes,Linea 1,1,normal,0,0
+45,linea 1santa úrsula,Santa Úrsula,Linea 1,1,normal,0,0
+46,linea 1la joya,La Joya,Linea 1,1,normal,0,0
+47,linea 1el caminero,El Caminero,Linea 1,1,normal,0,0
+48,linea 2tacubaya,Tacubaya,Linea 2,2,normal,0,0
+49,linea 2antonio maceo,Antonio Maceo,Linea 2,2,normal,0,0
+50,linea 2parque lira,Parque Lira,Linea 2,2,normal,0,0
+51,linea 2de la salle,De la Salle,Linea 2,2,normal,0,0
+52,linea 2patriotismo,Patriotismo,Linea 2,2,normal,0,0
+53,linea 2escandón,Escandón,Linea 2,2,normal,0,0
+54,linea 2nuevo león,Nuevo León,Linea 2,2,normal,0,0
+55,linea 2viaducto,Viaducto,Linea 2,2,normal,0,0
+56,linea 2amores,Amores,Linea 2,2,normal,0,0
+57,linea 2etiopía,Etiopía,Linea 2,2,PuntoFatiga,0,0
+58,linea 2doctor vértiz,Doctor Vértiz,Linea 2,2,normal,0,0
+59,linea 2centro scop,Centro SCOP,Linea 2,2,normal,0,0
+60,linea 2álamos,Álamos,Linea 2,2,normal,0,0
+61,linea 2xola,Xola,Linea 2,2,normal,0,0
+62,linea 2las américas,Las Américas,Linea 2,2,normal,0,0
+63,linea 2andrés molina enríquez,Andrés Molina Enríquez,Linea 2,2,normal,0,0
+64,linea 2la viga,La Viga,Linea 2,2,normal,0,0
+65,linea 2coyuya,Coyuya,Linea 2,2,normal,0,0
+66,linea 2metro coyuya,Metro Coyuya,Linea 2,2,normal,0,0
+67,linea 2canela,Canela,Linea 2,2,normal,0,0
+68,linea 2tlacotal,Tlacotal,Linea 2,2,normal,0,0
+69,linea 2goma,Goma,Linea 2,2,normal,0,0
+70,linea 2iztacalco,Iztacalco,Linea 2,2,PuntoFatiga,0,0
+71,linea 2upiicsa,UPIICSA,Linea 2,2,normal,0,0
+72,linea 2el rodeo,El Rodeo,Linea 2,2,normal,0,0
+73,linea 2río tecolutla,Río Tecolutla,Linea 2,2,normal,0,0
+74,linea 2río mayo,Río Mayo,Linea 2,2,normal,0,0
+75,linea 2rojo gómez,Rojo Gómez,Linea 2,2,normal,0,0
+76,linea 2del moral,Del Moral,Linea 2,2,normal,0,0
+77,linea 2río frío,Río Frío,Linea 2,2,normal,0,0
+78,linea 2leyes de reforma,Leyes de Reforma,Linea 2,2,normal,0,0
+79,linea 2cch oriente,CCH Oriente,Linea 2,2,normal,0,0
+80,linea 2constitución de apatzingán,Constitución de Apatzingán,Linea 2,2,normal,0,0
+81,linea 2canal de san juan,Canal de San Juan,Linea 2,2,normal,0,0
+82,linea 2nicolás bravo,Nicolás Bravo,Linea 2,2,normal,0,0
+83,linea 2general antonio de león,General Antonio de León,Linea 2,2,normal,0,0
+84,linea 2tepalcates,Tepalcates,Linea 2,2,PuntoFatiga,3,0
+85,linea 3tenayuca,Tenayuca,Linea 3,3,normal,0,0
+86,linea 3san josé de la escalera,San José de la Escalera,Linea 3,3,normal,0,0
+87,linea 3progreso nacional,Progreso Nacional,Linea 3,3,normal,0,0
+88,linea 3tres anegas,Tres Anegas,Linea 3,3,normal,0,0
+89,linea 3júpiter,Júpiter,Linea 3,3,PuntoFatiga,0,0
+90,linea 3la patera,La Patera,Linea 3,3,normal,0,0
+91,linea 3poniente 146,Poniente 146,Linea 3,3,normal,0,0
+92,linea 3montevideo,Montevideo,Linea 3,3,normal,0,0
+93,linea 3poniente 134,Poniente 134,Linea 3,3,normal,0,0
+94,linea 3poniente 128,Poniente 128,Linea 3,3,normal,0,0
+95,linea 3magdalena de las salinas,Magdalena de las Salinas,Linea 3,3,normal,0,0
+96,linea 3coltongo,Coltongo,Linea 3,3,normal,0,0
+97,linea 3cuitláhuac,Cuitláhuac,Linea 3,3,normal,0,0
+98,linea 3héroe de nacozari,Héroe de Nacozari,Linea 3,3,normal,0,0
+99,linea 3hospital la raza,Hospital la Raza,Linea 3,3,PuntoFatiga,0,0
+100,linea 3la raza,La Raza,Linea 3,3,normal,0,0
+101,linea 3circuito,Circuito,Linea 3,3,normal,0,0
+102,linea 3tolnáhuac,Tolnáhuac,Linea 3,3,normal,0,0
+103,linea 3tlatelolco,Tlatelolco,Linea 3,3,normal,0,0
+104,linea 3ricardo flores magón,Ricardo Flores Magón,Linea 3,3,normal,0,0
+105,linea 3guerrero,Guerrero,Linea 3,3,normal,0,0
+106,linea 3buenavista,Buenavista,Linea 3,3,normal,0,0
+107,linea 3mina,Mina,Linea 3,3,normal,0,0
+108,linea 3hidalgo,Hidalgo,Linea 3,3,normal,0,0
+109,linea 3juárez,Juárez,Linea 3,3,normal,0,0
+110,linea 3balderas,Balderas,Linea 3,3,normal,0,0
+111,linea 3cuauhtémoc,Cuauhtémoc,Linea 3,3,PuntoFatiga,0,0
+112,linea 3jardín pushkin,Jardín Pushkin,Linea 3,3,normal,0,0
+113,linea 3hospital general,Hospital General,Linea 3,3,normal,0,0
+114,linea 3doctor márquez,Doctor Márquez,Linea 3,3,normal,0,0
+115,linea 3centro médico,Centro Médico,Linea 3,3,normal,0,0
+116,linea 3obrero mundial,Obrero Mundial,Linea 3,3,normal,0,0
+117,linea 3etiopía,Etiopía,Linea 3,3,normal,0,0
+118,linea 3luz saviñón,Luz Saviñón,Linea 3,3,normal,0,0
+119,linea 3eugenia,Eugenia,Linea 3,3,normal,0,0
+120,linea 3división del norte,División del Norte,Linea 3,3,normal,0,0
+121,linea 3miguel laurent,Miguel Laurent,Linea 3,3,normal,0,0
+122,linea 3pueblo sta. cruz atoyac,Pueblo Sta. Cruz Atoyac,Linea 3,3,normal,0,0
+123,linea 3levantamiento,Levantamiento,Linea 3,3,normal,0,0
+124,linea 4buenavista,Buenavista,Linea 4,4,PuntoFatiga,0,0
+125,linea 4delegación cuauhtémoc,Delegación Cuauhtémoc,Linea 4,4,normal,0,0
+126,linea 4méxico tenochtitlán,México Tenochtitlán,Linea 4,4,normal,0,0
+127,linea 4museo san carlos,Museo San Carlos,Linea 4,4,normal,0,0
+128,linea 4hidalgo,Hidalgo,Linea 4,4,normal,0,0
+129,linea 4hidalgo (pantitlán),Hidalgo (Pantitlán),Linea 4,4,normal,0,0
+130,linea 4bellas artes,Bellas Artes,Linea 4,4,normal,0,0
+131,linea 4teatro blanquita,Teatro Blanquita,Linea 4,4,normal,0,0
+132,linea 4república de chile,República de Chile,Linea 4,4,normal,0,0
+133,linea 4república de argentina,República de Argentina,Linea 4,4,normal,0,0
+134,linea 4teatro del pueblo,Teatro del Pueblo,Linea 4,4,normal,0,0
+135,linea 4mixcalco,Mixcalco,Linea 4,4,normal,0,0
+136,linea 4ferrocarril de cintura,Ferrocarril de Cintura,Linea 4,4,normal,0,0
+137,linea 4morelos,Morelos,Linea 4,4,normal,0,0
+138,linea 4archivo general de la nación,Archivo General de la Nación,Linea 4,4,normal,0,0
+139,linea 4san lázaro,San Lázaro,Linea 4,4,PuntoFatiga,0,0
+140,linea 4moctezuma,Moctezuma,Linea 4,4,normal,0,0
+141,linea 4ing. eduardo molina,Ing. Eduardo Molina,Linea 4,4,normal,0,0
+142,linea 4hospital balbuena,Hospital Balbuena,Linea 4,4,normal,0,0
+143,linea 4cecilio robelo,Cecilio Robelo,Linea 4,4,normal,0,0
+144,linea 4mercado sonora,Mercado Sonora,Linea 4,4,normal,0,0
+145,linea 4mercado sonora (sur),Mercado Sonora (Sur),Linea 4,4,normal,0,0
+146,linea 4la merced,La Merced,Linea 4,4,normal,0,0
+147,linea 4las cruces,Las Cruces,Linea 4,4,normal,0,0
+148,linea 4san pablo,San Pablo,Linea 4,4,normal,0,0
+149,linea 4pino suárez,Pino Suárez,Linea 4,4,normal,0,0
+150,linea 4pino suárez (sur),Pino Suárez (Sur),Linea 4,4,normal,0,0
+151,linea 4museo de la ciudad,Museo de la Ciudad,Linea 4,4,normal,0,0
+152,linea 420 de noviembre,20 de Noviembre,Linea 4,4,normal,0,0
+153,linea 4isabe la católica,Isabe la Católica,Linea 4,4,normal,0,0
+154,linea 4el salvador,El Salvador,Linea 4,4,normal,0,0
+155,linea 4eje central,Eje Central,Linea 4,4,normal,0,0
+156,linea 4mercados de san juan,Mercados de San Juan,Linea 4,4,normal,0,0
+157,linea 4juárez,Juárez,Linea 4,4,normal,0,0
+158,linea 4vocacional 5,Vocacional 5,Linea 4,4,normal,0,0
+159,linea 4defensoría pública,Defensoría Pública,Linea 4,4,normal,0,0
+160,linea 4amajac (antes glorieta de colón),Amajac (Antes Glorieta de Colón),Linea 4,4,normal,0,0
+161,linea 4plaza de la república,Plaza de la República,Linea 4,4,normal,0,0
+162,linea 4aeropuerto,Aeropuerto,Linea 4,4,normal,0,0
+163,linea 4pantitlán (plataforma),Pantitlán (Plataforma),Linea 4,4,PuntoFatiga,0,0
+164,linea 4pantitlán (parabús),Pantitlán (Parabús),Linea 4,4,normal,0,0
+165,linea 4alameda oriente,Alameda Oriente,Linea 4,4,normal,0,0
+166,linea 4calle 6,Calle 6,Linea 4,4,normal,0,0
+167,linea 5río de los remedios,Río de los Remedios,Linea 5,5,PuntoFatiga,0,0
+168,linea 5314 memorial new's divine,314 memorial New's Divine,Linea 5,5,normal,0,0
+169,linea 55 de mayo,5 de Mayo,Linea 5,5,normal,0,0
+170,linea 5vasco de quiroga,Vasco de Quiroga,Linea 5,5,normal,0,0
+171,linea 5el coyol,El Coyol,Linea 5,5,normal,0,0
+172,linea 5preparatoria 3,Preparatoria 3,Linea 5,5,normal,0,0
+173,linea 5san juan de aragón,San Juan de Aragón,Linea 5,5,normal,0,0
+174,linea 5río de guadalupe,Río de Guadalupe,Linea 5,5,normal,0,0
+175,linea 5talismán,Talismán,Linea 5,5,normal,0,0
+176,linea 5victoria,Victoria,Linea 5,5,normal,0,0
+177,linea 5oriente 101,Oriente 101,Linea 5,5,PuntoFatiga,0,0
+178,linea 5río santa coleta,Río Santa Coleta,Linea 5,5,normal,0,0
+179,linea 5río consulado,Río Consulado,Linea 5,5,normal,0,0
+180,linea 5canal del norte,Canal del Norte,Linea 5,5,normal,0,0
+181,linea 5deportivo eduardo molina,Deportivo Eduardo Molina,Linea 5,5,normal,0,0
+182,linea 5mercado morelos,Mercado Morelos,Linea 5,5,normal,0,0
+183,linea 5archivo general de la nación,Archivo General de la Nación,Linea 5,5,normal,0,0
+184,linea 5san lázaro,San Lázaro,Linea 5,5,PuntoFatiga,0,0
+185,linea 5moctezuma,Moctezuma,Linea 5,5,normal,0,0
+186,linea 5venustiano carranza,Venustiano Carranza,Linea 5,5,normal,2,0
+187,linea 5avenida del taller,Avenida del Taller,Linea 5,5,normal,3,0
+188,linea 5mixihuca,Mixihuca,Linea 5,5,normal,1,0
+189,linea 5hospital general troncoso,Hospital General Troncoso,Linea 5,5,normal,2,0
+190,linea 5metro coyuya,Metro Coyuya,Linea 5,5,normal,2,0
+191,linea 5recreo,Recreo,Linea 5,5,normal,2,0
+192,linea 5oriente 116,Oriente 116,Linea 5,5,PuntoFatiga,2,0
+193,linea 5colegio de bachilleres 3,Colegio de Bachilleres 3,Linea 5,5,normal,2,0
+194,linea 5canal de apatlaco,Canal de Apatlaco,Linea 5,5,normal,2,0
+195,linea 5apatlaco,Apatlaco,Linea 5,5,normal,2,0
+196,linea 5aculco,Aculco,Linea 5,5,normal,2,0
+197,linea 5churubusco oriente,Churubusco Oriente,Linea 5,5,normal,2,0
+198,linea 5escuadrón 201,Escuadrón 201,Linea 5,5,PuntoFatiga,0,0
+199,linea 5atanasio g. sarabia,Atanasio G. Sarabia,Linea 5,5,normal,0,0
+200,linea 5ermita iztapalapa,Ermita Iztapalapa,Linea 5,5,normal,1,0
+201,linea 5ganaderos,Ganaderos,Linea 5,5,normal,0,0
+202,linea 5pueblo de los reyes,Pueblo de los Reyes,Linea 5,5,normal,0,0
+203,linea 5barrio san antonio culhuacán,Barrio San Antonio Culhuacán,Linea 5,5,normal,0,0
+204,linea 5calzada taxqueña,Calzada Taxqueña,Linea 5,5,normal,1,0
+205,linea 5cafetales,Cafetales,Linea 5,5,normal,0,0
+206,linea 5esime culhuacán,ESIME Culhuacán,Linea 5,5,normal,3,0
+207,linea 5manuela sáenz,Manuela Sáenz,Linea 5,5,normal,0,0
+208,linea 5la virgen,La Virgen,Linea 5,5,normal,3,0
+209,linea 5tepetlapa,Tepetlapa,Linea 5,5,normal,0,0
+210,linea 5las bombas,Las Bombas,Linea 5,5,PuntoFatiga,0,0
+211,linea 5vista hermosa,Vista Hermosa,Linea 5,5,normal,0,0
+212,linea 5calzada del hueso,Calzada del Hueso,Linea 5,5,normal,0,0
+213,linea 5cañaverales,Cañaverales,Linea 5,5,normal,0,0
+214,linea 5muyuguarda,Muyuguarda,Linea 5,5,normal,0,0
+215,linea 5circuito cuemanco,Circuito Cuemanco,Linea 5,5,normal,0,0
+216,linea 5dif xochimilco,DIF Xochimilco,Linea 5,5,normal,0,0
+217,linea 5preparatoria 1,Preparatoria 1,Linea 5,5,normal,0,0
+218,linea 6villa de aragón,Villa de Aragón,Linea 6,6,normal,0,0
+219,linea 6francisco morazán,Francisco Morazán,Linea 6,6,normal,0,0
+220,linea 6colegio de bachilleres 9,Colegio de bachilleres 9,Linea 6,6,normal,0,0
+221,linea 6la pradera,La Pradera,Linea 6,6,normal,0,0
+222,linea 6volcán de fuego,Volcán de Fuego,Linea 6,6,normal,0,0
+223,linea 6ampliación providencia,Ampliación Providencia,Linea 6,6,normal,0,0
+224,linea 6deportivo los galeana,Deportivo los Galeana,Linea 6,6,normal,0,0
+225,linea 6av. 416 poniente,Av. 416 poniente,Linea 6,6,normal,0,0
+226,linea 6av. 416 oriente,Av. 416 oriente,Linea 6,6,normal,0,0
+227,linea 6av. 414,Av. 414,Linea 6,6,normal,0,0
+228,linea 6av. 482,Av. 482,Linea 6,6,normal,0,0
+229,linea 6loreto fabela,Loreto Fabela,Linea 6,6,PuntoFatiga,0,0
+230,linea 6pueblo san juan de aragón,Pueblo San Juan de Aragón,Linea 6,6,normal,0,0
+231,linea 6casas alemán,Casas Alemán,Linea 6,6,normal,0,0
+232,linea 6gran canal,Gran Canal,Linea 6,6,normal,0,0
+233,linea 6san juan de aragón,San Juan de Aragón,Linea 6,6,normal,0,0
+234,linea 6hospital general la villa,Hospital General la Villa,Linea 6,6,normal,0,0
+235,linea 6martín carrera,Martín Carrera,Linea 6,6,normal,0,0
+236,linea 6delegación gam,Delegación GAM,Linea 6,6,normal,0,0
+237,linea 6hospital infantil la villa,Hospital Infantil la Villa,Linea 6,6,normal,0,0
+238,linea 6de los misterios,De los Misterios,Linea 6,6,normal,0,0
+239,linea 6la villa,La Villa,Linea 6,6,normal,0,0
+240,linea 6deportivo 18 de marzo,Deportivo 18 de Marzo,Linea 6,6,PuntoFatiga,0,0
+241,linea 6río bamba,Río Bamba,Linea 6,6,normal,0,0
+242,linea 6ipn,IPN,Linea 6,6,normal,0,0
+243,linea 6san bartolo,San Bartolo,Linea 6,6,normal,0,0
+244,linea 6instituto del petróleo,Instituto del Petróleo,Linea 6,6,normal,0,0
+245,linea 6lindavista vallejo,Lindavista Vallejo,Linea 6,6,normal,0,0
+246,linea 6montevideo,Montevideo,Linea 6,6,PuntoFatiga,0,0
+247,linea 6norte 45,Norte 45,Linea 6,6,normal,0,0
+248,linea 6norte 59,Norte 59,Linea 6,6,normal,0,0
+249,linea 6tecnoparque,Tecnoparque,Linea 6,6,normal,0,0
+250,linea 6uam azcapotzalco,UAM Azcapotzalco,Linea 6,6,normal,0,0
+251,linea 6ferrocarriles nacionales,Ferrocarriles Nacionales,Linea 6,6,normal,0,0
+252,linea 6de las culturas,De las Culturas,Linea 6,6,normal,0,0
+253,linea 6colegio de bachilleres 1,Colegio de bachilleres 1,Linea 6,6,normal,0,0
+254,linea 6el rosario,El Rosario,Linea 6,6,normal,0,0
+255,linea 7indios verdes,Indios verdes,Linea 7,7,PuntoFatiga,0,0
+256,linea 7de los misterios,De los Misterios,Linea 7,7,normal,0,0
+257,linea 7hospital infantil la villa,Hospital Infantil la Villa,Linea 7,7,normal,0,0
+258,linea 7delegación gam,Delegación GAM,Linea 7,7,normal,0,0
+259,linea 7garrido,Garrido,Linea 7,7,normal,0,0
+260,linea 7av. talismán,Av. Talismán,Linea 7,7,normal,0,0
+261,linea 7necaxa,Necaxa,Linea 7,7,normal,0,0
+262,linea 7excélsior,Excélsior,Linea 7,7,normal,0,0
+263,linea 7robles domínguez,Robles Domínguez,Linea 7,7,normal,0,0
+264,linea 7clave,Clave,Linea 7,7,normal,0,0
+265,linea 7misterios,Misterios,Linea 7,7,normal,0,0
+266,linea 7mercado beethoven,Mercado Beethoven,Linea 7,7,normal,0,0
+267,linea 7peralvillo,Peralvillo,Linea 7,7,normal,0,0
+268,linea 7tres culturas,Tres Culturas,Linea 7,7,normal,0,0
+269,linea 7glorieta cuitláhuac,Glorieta Cuitláhuac,Linea 7,7,PuntoFatiga,0,0
+270,linea 7garibaldi,Garibaldi,Linea 7,7,normal,0,0
+271,linea 7glorieta violeta,Glorieta Violeta,Linea 7,7,normal,0,0
+272,linea 7hidalgo,Hidalgo,Linea 7,7,normal,0,0
+273,linea 7el caballito,El caballito,Linea 7,7,normal,0,0
+274,linea 7glorieta colon,Glorieta Colon,Linea 7,7,normal,0,0
+275,linea 7parís,París,Linea 7,7,PuntoFatiga,0,0
+276,linea 7reforma,Reforma,Linea 7,7,normal,0,0
+277,linea 7hamburgo,Hamburgo,Linea 7,7,normal,0,0
+278,linea 7el ahuehuete,El Ahuehuete,Linea 7,7,normal,0,0
+279,linea 7el ángel,El Ángel,Linea 7,7,normal,0,0
+280,linea 7la diana,La Diana,Linea 7,7,normal,0,0
+281,linea 7chapultepec,Chapultepec,Linea 7,7,normal,0,0
+282,linea 7gandhi,Gandhi,Linea 7,7,normal,0,0
+283,linea 7antropología,Antropología,Linea 7,7,normal,0,0
+284,linea 7auditorio,Auditorio,Linea 7,7,PuntoFatiga,0,0
+285,linea 7campo marte,Campo Marte,Linea 7,7,normal,0,0
+286,linea h72alameda tacubaya,Alameda Tacubaya,Linea H72,8,normal,0,0
+287,linea h72de la salle,De La Salle,Linea H72,8,normal,0,0
+288,linea npantitlán,Pantitlán,Linea N,9,normal,0,0
+289,linea npuebla,Puebla,Linea N,9,normal,0,0
+290,linea nvelodromo,Velodromo,Linea N,9,normal,0,0

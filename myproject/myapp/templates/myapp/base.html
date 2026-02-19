@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Dashboard de Calidad{% endblock %}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <style>
+        body {
+            display: flex;
+        }
+        #sidebar {
+            min-width: 250px;
+            max-width: 250px;
+            background: #343a40;
+            color: #fff;
+            transition: all 0.3s;
+        }
+        #sidebar.active {
+            margin-left: -250px;
+        }
+        #sidebar .sidebar-header {
+            padding: 20px;
+            background: #495057;
+        }
+        #sidebar ul.components {
+            padding: 20px 0;
+            border-bottom: 1px solid #47748b;
+        }
+        #sidebar ul p {
+            color: #fff;
+            padding: 10px;
+        }
+        #sidebar ul li a {
+            padding: 10px;
+            font-size: 1.1em;
+            display: block;
+            color: #f8f9fa;
+        }
+        #sidebar ul li a:hover {
+            color: #343a40;
+            background: #fff;
+        }
+        #content {
+            width: 100%;
+            padding: 20px;
+            min-height: 100vh;
+            transition: all 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Dashboard</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+            <li>
+                <a href="{% url 'grafica_global_siop' %}">Calificaciones Globales</a>
+            </li>
+            <li>
+                <a href="{% url 'index' %}">Campos Recurrentes</a>
+            </li>
+            <li>
+                <a href="{% url 'grafica_status_abierto' %}">Status Abierto</a>
+            </li>
+            <li>
+                <a href="{% url 'grafica_causas_otros' %}">Detalle Causas 'Otros'</a>
+            </li>
+            <li>
+                <a href="{% url 'detalle_tritones_trimestre' %}">Detalle Evaluaciones</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>

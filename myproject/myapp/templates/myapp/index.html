@@ -1,0 +1,69 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Gráfica de Campos Recurrentes{% endblock %}
+
+{% block content %}
+    <h1>Gráfica de Campos Recurrentes</h1>
+
+    <form method="get" class="mb-4">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="start_date">Fecha Inicio:</label>
+                <input type="date" id="start_date" name="start_date" class="form-control" value="{{ start_date }}" min="{{ min_date }}" max="{{ max_date }}">
+            </div>
+            <div class="col-md-3">
+                <label for="end_date">Fecha Fin:</label>
+                <input type="date" id="end_date" name="end_date" class="form-control" value="{{ end_date }}" min="{{ min_date }}" max="{{ max_date }}">
+            </div>
+            <div class="col-md-2">
+                <label for="linea">Línea:</label>
+                <select id="linea" name="linea" class="form-control" multiple>
+                    {% for linea in lineas %}
+                        <option value="{{ linea }}" {% if linea in selected_lineas %}selected{% endif %}>{{ linea }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col-md-2 align-self-end">
+                <button type="submit" class="btn btn-primary">Filtrar</button>
+            </div>
+        </div>
+    </form>
+
+    <div id="grafica-container"></div>
+    <div id="detalle-container" class="mt-4"></div>
+
+    <script>
+        var grafica_json = {{ grafica_json|safe }};
+        var plot_div = document.getElementById('grafica-container');
+        Plotly.newPlot(plot_div, grafica_json.data, grafica_json.layout);
+
+        plot_div.on('plotly_click', function(data){
+            var punto = data.points[0];
+            var campo_penalizado = punto.x;
+            var detalleContainer = document.getElementById('detalle-container');
+
+            // Construir la URL para la petición AJAX
+            var url = new URL(window.location.href.split('?')[0]);
+            url.searchParams.set('campo_penalizado', campo_penalizado);
+
+            // Añadir los filtros actuales a la URL
+            url.searchParams.set('start_date', document.getElementById('start_date').value);
+            url.searchParams.set('end_date', document.getElementById('end_date').value);
+            var lineasSeleccionadas = Array.from(document.getElementById('linea').selectedOptions).map(o => o.value);
+            lineasSeleccionadas.forEach(linea => url.searchParams.append('linea', linea));
+
+            // Si la tabla para este campo ya está visible, la ocultamos. Si no, la pedimos.
+            if (detalleContainer.dataset.campo === campo_penalizado) {
+                detalleContainer.innerHTML = '';
+                detalleContainer.dataset.campo = '';
+            } else {
+                fetch(url)
+                    .then(response => response.text())
+                    .then(html => {
+                        detalleContainer.innerHTML = html;
+                        detalleContainer.dataset.campo = campo_penalizado;
+                    });
+            }
+        });
+    </script>
+{% endblock %}
