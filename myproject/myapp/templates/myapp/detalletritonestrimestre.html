@@ -1,0 +1,112 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}Detalle por Trimestre{% endblock %}
+
+{% block content %}
+    <h3 class="mt-4">Evaluación por Periodo</h3>
+
+    <!-- Filtros -->
+    <form method="get" class="form-row align-items-end">
+        <div class="form-group col-auto">
+            <label for="year">Año</label>
+            <select name="year" id="year" class="form-control">
+                {% for y in years %}
+                    <option value="{{ y }}" {% if y == selected_year %}selected{% endif %}>{{ y }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-auto">
+            <label for="month">Mes</label>
+            <select name="month" id="month" class="form-control">
+                <option value="">Selecciona Mes</option>
+                {% for val, name in meses.items %}
+                    <option value="{{ val }}" {% if val == selected_month %}selected{% endif %}>{{ name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-auto">
+            <label for="quarter">Trimestre</label>
+            <select name="quarter" id="quarter" class="form-control">
+                <option value="">Selecciona Trimestre</option>
+                {% for q in quarters %}
+                    <option value="{{ q }}" {% if q == selected_quarter %}selected{% endif %}>T{{ q }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-auto">
+            <label for="linea">Línea</label>
+            <select name="linea" id="linea" class="form-control">
+                <option value="">Selecciona Línea</option>
+                {% for l in lineas %}
+                    <option value="{{ l }}" {% if l == selected_linea %}selected{% endif %}>{{ l }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group col-auto">
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </div>
+    </form>
+
+    <!-- Gráfica Principal -->
+    <div id="histograma-indicativo"></div>
+
+    <div class="row">
+        <!-- Gráfica de Pie -->
+        <div class="col-md-6">
+            <div id="grafica-pie-penalizaciones"></div>
+        </div>
+
+        <!-- Tabla de Detalles -->
+        <div class="col-md-12 mt-4">
+            {% if titulo_tabla %}
+                <h4>{{ titulo_tabla }}</h4>
+            {% endif %}
+            <div id="tabla-detalle-incidencias" class="table-responsive">
+                {{ tabla_html|safe }}
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var figHist = {{ fig_hist_json|safe }};
+        Plotly.newPlot('histograma-indicativo', figHist.data, figHist.layout);
+
+        var histGraph = document.getElementById('histograma-indicativo');
+        histGraph.on('plotly_click', function(data){
+            var indicativo = data.points[0].x;
+            var currentUrl = new URL(window.location.href);
+            currentUrl.searchParams.set('indicativo', indicativo);
+            currentUrl.searchParams.delete('campo_penalizado');
+            window.location.href = currentUrl.href;
+        });
+
+        {% if fig_pie_json %}
+            var figPie = {{ fig_pie_json|safe }};
+            Plotly.newPlot('grafica-pie-penalizaciones', figPie.data, figPie.layout);
+
+            var pieGraph = document.getElementById('grafica-pie-penalizaciones');
+            pieGraph.on('plotly_click', function(data){
+                var campo = data.points[0].label;
+                var currentUrl = new URL(window.location.href);
+                currentUrl.searchParams.set('campo_penalizado', campo);
+                window.location.href = currentUrl.href;
+            });
+        {% endif %}
+
+        // Lógica para deshabilitar mes si se selecciona trimestre y viceversa
+        const monthDropdown = document.getElementById('month');
+        const quarterDropdown = document.getElementById('quarter');
+
+        monthDropdown.addEventListener('change', function() {
+            if (this.value) {
+                quarterDropdown.value = '';
+            }
+        });
+
+        quarterDropdown.addEventListener('change', function() {
+            if (this.value) {
+                monthDropdown.value = '';
+            }
+        });
+    </script>
+{% endblock %}
