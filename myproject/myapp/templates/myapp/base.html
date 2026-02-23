@@ -4,24 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <title>{% block title %}Dashboard de Calidad{% endblock %}</title>
+    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <!-- Bootstrap-select CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/css/bootstrap-select.min.css">
+
+    <!-- jQuery (Full version) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Popper.js v1.16.1 (Compatible con Bootstrap 4) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <!-- Bootstrap JS -->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Bootstrap-select JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.18/js/bootstrap-select.min.js"></script>
+    <!-- Plotly.js -->
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
     <style>
         body {
             display: flex;
         }
         #sidebar {
-            min-width: 250px;
-            max-width: 250px;
+            min-width: 200px;
+            max-width: 200px;
             background: #343a40;
             color: #fff;
             transition: all 0.3s;
         }
         #sidebar.active {
-            margin-left: -250px;
+            margin-left: -200px;
         }
         #sidebar .sidebar-header {
             padding: 20px;
@@ -56,21 +67,12 @@
 <body>
     <nav id="sidebar">
         <div class="sidebar-header">
-            <h3>Dashboard</h3>
+            <h4>Dashboard</h4>
         </div>
 
         <ul class="list-unstyled components">
             <li>
-                <a href="{% url 'grafica_global_siop' %}">Calificaciones Globales</a>
-            </li>
-            <li>
-                <a href="{% url 'index' %}">Campos Recurrentes</a>
-            </li>
-            <li>
-                <a href="{% url 'grafica_status_abierto' %}">Status Abierto</a>
-            </li>
-            <li>
-                <a href="{% url 'grafica_causas_otros' %}">Detalle Causas 'Otros'</a>
+                <a href="{% url 'grafica_global_siop' %}">Dashboard Global</a>
             </li>
             <li>
                 <a href="{% url 'detalle_tritones_trimestre' %}">Detalle Evaluaciones</a>

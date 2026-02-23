@@ -44,6 +44,8 @@
         </div>
         <div class="form-group col-auto">
             <button type="submit" class="btn btn-primary">Filtrar</button>
+            <a href="{% url 'detalle_tritones_trimestre' %}" class="btn btn-secondary">Limpiar Filtros</a>
+            <button type="button" id="download-html" class="btn btn-info">Descargar HTML</button>
         </div>
     </form>
 
@@ -107,6 +109,35 @@
             if (this.value) {
                 monthDropdown.value = '';
             }
+        });
+
+        // Descargar HTML
+        document.getElementById('download-html').addEventListener('click', function() {
+            const year = document.getElementById('year').value;
+            const month = document.getElementById('month').value;
+            const quarter = document.getElementById('quarter').value;
+            const linea = document.getElementById('linea').value;
+
+            let fileName = `reporte_detalle_${year}`;
+            if (month) {
+                fileName += `_mes-${month}`;
+            }
+            if (quarter) {
+                fileName += `_trimestre-${quarter}`;
+            }
+            if (linea) {
+                fileName += `_linea-${linea}`;
+            }
+            fileName += '.html';
+
+            const htmlContent = document.documentElement.outerHTML;
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
         });
     </script>
 {% endblock %}

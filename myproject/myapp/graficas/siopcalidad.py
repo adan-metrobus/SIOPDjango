@@ -1,6 +1,7 @@
 import pandas as pd
 import csv
 import os
+from functools import lru_cache
 
 # Get the absolute path of the directory containing this script
 _CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -162,6 +163,7 @@ def obtener_detalle_penalizaciones(df: pd.DataFrame, penalizaciones: pd.DataFram
 # ===============================
 # Nueva función principal
 # ===============================
+@lru_cache(maxsize=None)
 def obtener_datos_procesados():
     """Función principal que carga, procesa y devuelve el DataFrame de aperturas."""
     # 1. Cargar y preparar los datos
