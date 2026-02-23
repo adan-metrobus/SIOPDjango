@@ -133,3 +133,4 @@ cython_debug/
 
 # Secrets
 client_secrets.json
+myproject/db.sqlite3
