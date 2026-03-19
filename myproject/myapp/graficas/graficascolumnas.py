@@ -17,11 +17,10 @@ mapa_colores = {
     '7': '#046a38'
 }
 # Cargar y preparar los datos iniciales
+# La función obtener_datos_procesados de siopcalidad ya limpia y prepara los datos.
+# No es necesario rellenar o modificar 'campos_penalizados' aquí.
 df = siopcalidad.obtener_datos_procesados()
 df['fechahora'] = pd.to_datetime(df['fechahora']).dt.tz_localize(None)
-
-# Rellenar valores vacíos o nulos en 'campos_penalizados'
-df['campos_penalizados'] = df['campos_penalizados'].fillna('Sin penalizaciones').replace('', 'Sin penalizaciones')
 
 min_date = df['fechahora'].min().date()
 max_date = df['fechahora'].max().date()
@@ -110,15 +109,17 @@ def update_histograms(start_date, end_date, selected_lineas):
     fig_cantidad.update_layout(bargap=0.2, yaxis_title="Conteo")
 
     if not filtered_df.empty:
-        # Recalcular los conteos basados en el df filtrado para el eje y
         counts_df = filtered_df.groupby('cantidad_penalizaciones').size().reset_index(name='counts')
         max_y_cantidad = counts_df['counts'].max() * 1.15 if not counts_df.empty else 10
         fig_cantidad.update_layout(yaxis_range=[0, max_y_cantidad])
 
     # --- Histograma para campos_penalizados (Top 20) ---
-    top_20_counts = filtered_df['campos_penalizados'].value_counts().nlargest(20)
+    # Se filtra para excluir la categoría 'Sin Penalización' de la gráfica, según lo solicitado.
+    df_penalizados = filtered_df[filtered_df['campos_penalizados'] != 'Sin Penalización']
+    
+    top_20_counts = df_penalizados['campos_penalizados'].value_counts().nlargest(20)
     top_20_campos = top_20_counts.index
-    df_top_20 = filtered_df[filtered_df['campos_penalizados'].isin(top_20_campos)]
+    df_top_20 = df_penalizados[df_penalizados['campos_penalizados'].isin(top_20_campos)]
     
     if selected_lineas:
         fig_campos = px.histogram(df_top_20, x='campos_penalizados',
@@ -156,7 +157,6 @@ def display_click_data(clickData, start_date, end_date, selected_lineas):
     if clickData is None:
         return {'display': 'none'}, []
 
-    # Filter dataframe based on date and line selections
     base_df = df[
         (df['fechahora'] >= pd.to_datetime(start_date)) &
         (df['fechahora'] <= pd.to_datetime(end_date))
@@ -166,13 +166,8 @@ def display_click_data(clickData, start_date, end_date, selected_lineas):
     else:
         filtered_df = base_df
 
-    # Get the selected field from the bar chart
     selected_campo = clickData['points'][0]['x']
-
-    # Filter the dataframe for the details table
     table_df = filtered_df[filtered_df['campos_penalizados'] == selected_campo]
-
-    # Select and format the columns for the table
     table_data = table_df[columnas_deseadas].to_dict('records')
 
     return {'display': 'block'}, table_data

@@ -92,8 +92,9 @@ def _generate_status_abierto_graph():
     hoy = pd.to_datetime(datetime.now().date())
     df_abiertos.loc[:, 'antiguedad'] = (hoy - pd.to_datetime(df_abiertos['Fecha'])).dt.days
 
-    bins = [0, 30, 60, 90, float('inf')]
-    labels = ['1-30 días', '31-60 días', '61-90 días', '91+ días']
+    # FIX: Adjust bins and labels for more granular age ranges
+    bins = [0, 2, 4, 6, 8, 10, float('inf')]
+    labels = ['0-1 día', '2-3 días', '4-5 días', '6-7 días', '8-9 días', '10+ días']
     df_abiertos['rango_antiguedad'] = pd.cut(df_abiertos['antiguedad'], bins=bins, labels=labels, right=False)
 
     antiguedad_por_linea = df_abiertos.groupby(['rango_antiguedad', 'Línea'], observed=False).size().reset_index(name='conteo')
@@ -170,7 +171,7 @@ def generate_global_siop_graphs(start_date, end_date, indicativo=None, selected_
         titulo_detalle = f'Detalle de Incidencias para: {indicativo}'
 
     # Gráfica de Campos Penalizados
-    df_filtrado_glob['campos_penalizados'] = df_filtrado_glob['campos_penalizados'].fillna('').replace('Sin penalizaciones', '')
+    df_filtrado_glob['campos_penalizados'] = df_filtrado_glob['campos_penalizados'].fillna('').replace('Sin Penalización', '')
     campos_lista = df_filtrado_glob['campos_penalizados'].astype(str).str.split(',').explode().str.strip()
     conteo_campos = campos_lista[campos_lista != ''].value_counts().reset_index()
     conteo_campos.columns = ['Campo Penalizado', 'Frecuencia']

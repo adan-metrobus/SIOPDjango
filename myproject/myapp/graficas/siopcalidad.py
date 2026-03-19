@@ -24,8 +24,7 @@ COLUMNAS_A = [
     'horacierrecorrecta',
     'Causa',
     'Tipo',
-    'Subtipo',
-    'Seguimiento'
+    'Subtipo'
 ]
 
 COLUMNAS_B = [
@@ -78,6 +77,15 @@ def cargar_datos():
 
 def preparar_datos(df_lineas, df_estaciones, df_aperturas):
     """Prepara y limpia los DataFrames para el análisis."""
+    # FIX: Handle column name changes from the source robustly
+    if 'Estación Inicial Afectada' in df_aperturas.columns:
+        df_aperturas.rename(columns={'Estación Inicial Afectada': 'Estación Inicial'}, inplace=True)
+    
+    if 'Estación Final Afectada' in df_aperturas.columns:
+        df_aperturas.rename(columns={'Estación Final Afectada': 'Estación Final'}, inplace=True)
+    elif 'Estacion Final Afectada' in df_aperturas.columns: # Check without tilde as a fallback
+        df_aperturas.rename(columns={'Estacion Final Afectada': 'Estación Final'}, inplace=True)
+
     df_aperturas = df_aperturas[df_aperturas["Línea"] != "T"].copy()
 
     df_aperturas['Latitud'] = pd.to_numeric(df_aperturas['Latitud'], errors='coerce')
@@ -95,14 +103,6 @@ def preparar_datos(df_lineas, df_estaciones, df_aperturas):
     df_aperturas['Hora'] = pd.to_datetime(df_aperturas['Hora'], format='%H:%M:%S', errors='coerce').dt.time
     df_aperturas['Hora de Cierre'] = pd.to_datetime(df_aperturas['Hora de Cierre'], format='%H:%M:%S', errors='coerce').dt.time
     df_aperturas['horacierrecorrecta'] = df_aperturas['Hora de Cierre'] < df_aperturas['Hora']
-    prefixes = [
-        "https://metrobus.workplace.com/groups/",
-        "https://chat.google.com/room/AAQA_d_ePWg/",
-        "https://siop-mb.app-metrobus.com/Seguimiento/"
-    ]
-    seguimiento_str = df_aperturas['Seguimiento'].astype(str)
-    cond_seguimiento_valido = seguimiento_str.str.startswith(tuple(prefixes))
-    df_aperturas['seguimiento_valido'] = cond_seguimiento_valido
     cond_subtipo_es_A1 = df_aperturas['Subtipo'] == 'A1-Colisión (ambos vehículos en movimiento)'
     keywords_subtipo = ['moto', 'potro', 'potra', 'bici']
     cond_keywords_subtipo_presentes = df_aperturas['Observacion_norm'].str.contains('|'.join(keywords_subtipo), na=False)
@@ -120,14 +120,13 @@ def preparar_datos(df_lineas, df_estaciones, df_aperturas):
 def _obtener_penalizaciones(df: pd.DataFrame) -> pd.DataFrame:
     """Calcula un DataFrame booleano de penalizaciones para cada campo."""
     penalizaciones = pd.DataFrame(index=df.index)
-    cols_std_check = [col for col in COLUMNAS_A if col not in ['Causa', 'horacierrecorrecta', 'Seguimiento', 'Subtipo', 'Tipo']]
+    cols_std_check = [col for col in COLUMNAS_A if col not in ['Causa', 'horacierrecorrecta', 'Subtipo', 'Tipo']]
     for col in cols_std_check:
         penalizaciones[col] = df[col].isna() | df[col].astype(str).str.strip().eq('')
     penalizaciones['horacierrecorrecta'] = df['horacierrecorrecta']
     cond_estatus_cerrado = df['Estatus_norm'] == 'cerrado'
     cond_causa_invalida = df['Causa_norm'].isin(INVALIDAS_CAUSA)
     penalizaciones['Causa'] = cond_estatus_cerrado & cond_causa_invalida
-    penalizaciones['Seguimiento'] = ~df['seguimiento_valido']
     penalidad_estandar_subtipo = df['Subtipo'].isna() | df['Subtipo'].astype(str).str.strip().eq('')
     penalizaciones['Subtipo'] = penalidad_estandar_subtipo | df['penalizar_subtipo_por_obs'] | df['penalizar_subtipo_por_c2']
     penalidad_estandar_tipo = df['Tipo'].isna() | df['Tipo'].astype(str).str.strip().eq('')
@@ -195,7 +194,7 @@ def obtener_datos_procesados():
 
     # 4. Limpiar columnas temporales
     df_aperturas.drop(columns=[
-        'Causa_norm', 'Estatus_norm', 'Observacion_norm', 'seguimiento_valido', 
+        'Causa_norm', 'Estatus_norm', 
         'penalizar_subtipo_por_obs', 'penalizar_tipo_por_obs', 'penalizar_subtipo_por_c2'
     ], inplace=True)
 
